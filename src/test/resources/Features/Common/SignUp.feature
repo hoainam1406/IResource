@@ -2,7 +2,7 @@ Feature: Sign Up Test cases
   I want to Sign Up an account on IResource website
 
 #  Using excel reader
-  @SignUp
+  @SignUp @1
   Scenario: Verify user is able to sign up successfully when entering all valid fields
     Given I want to open sign up page
     When I want to enter all fields
@@ -121,7 +121,7 @@ Feature: Sign Up Test cases
       |FirstName |LastName |Email            |Password    |ConfirmPassword      |Message       |
       |    ABC   |   DEF   |hoainam@gmail.com|Hoainam1406@|                     |Required!     |
 
-  @SignUp @1
+  @SignUp
   Scenario Outline:Verify user the error message will show when entering Confirmpassword not match with password
     Given I want to open sign up page
     When I want to enter all fields "<FirstName>" "<LastName>" "<Email>" "<Password>" "<ConfirmPassword>"
@@ -130,3 +130,10 @@ Feature: Sign Up Test cases
     Examples:
       |FirstName |LastName |Email            |Password    |ConfirmPassword      |Message                |
       |    ABC   |   DEF   |hoainam@gmail.com|Hoainam1406@|Hoainam1406          |Password doesn’t match |
+
+
+#  @Test
+#  Scenario Outline:Verify user the error message will show when entering Confirmpassword not match with password
+#    Given I want to open sign up page
+#    Then I Add Contact with name "<contactName>" and number  "<phoneNumber>"
+#    Examples:

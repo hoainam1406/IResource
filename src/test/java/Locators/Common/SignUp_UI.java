@@ -47,7 +47,6 @@ public class SignUp_UI extends PageObject {
     @FindBy(className = "input-group-text")
     public WebElementFacade btnShowConfirmPassword;
 
-//    @FindBy(xpath = "//h2[contains(text(),'Verify Email')]")
     @FindBy(className = "signup-title")
     public WebElementFacade txtVerifyEmail;
 }

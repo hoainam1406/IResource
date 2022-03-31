@@ -1,4 +1,4 @@
-package TestRunner.Common;
+package TestRunner;
 
 
 import cucumber.api.CucumberOptions;
@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
         features = {"src/test/resources/Features/Common/Login.feature"},
-        tags = {"@Login"},
+        tags = {""},
         glue = {"Steps"},
         plugin = {"pretty", "html:target/cucumber-reports"},
         monochrome = true

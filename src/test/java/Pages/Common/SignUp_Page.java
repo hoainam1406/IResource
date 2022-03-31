@@ -65,8 +65,5 @@ public class SignUp_Page extends PageObject {
         signUp_ui.tbxConfirmPassword.sendKeys(confirmpassword);
     }
 
-    public String pageUrlValidation(){
-        return getDriver().getCurrentUrl();
-    }
 
 }

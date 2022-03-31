@@ -1,34 +1,33 @@
-Feature: Login Test cases
+Feature: Initial Login Test cases
   I want to login into IResource website
 
 #  Initial Login
-
   @Login @InitialLogin
-  Scenario Outline:Verify user is able to login successfully when entering valid email and password
+  Scenario Outline:TC_1: Verify user is able to login successfully when entering valid email and password
     Given I want to open login page
     When I enter "<Email>" and "<Password>"
     And I click Login button
-    Then The Profile information should show "<url>"
+    Then The Corresponding page should show with URL "<url>"
     Examples:
-    |Email                          |Password    |url                                              |
-    |hoainam.nv.1406+test17@gmail.com|Hoainam1406@|https://iresource.smartdev.vn/profile-creation  |
+    |Email                          |Password    |url                                               |
+    |hoainam.nv.1406+test17@gmail.com|Hoainam1406@|https://iresource.smartdev.vn/profile-creation   |
     |hoainam.nv.1406+test18@gmail.com|Hoainam1406@|https://iresource.smartdev.vn/general-information|
 
 #  Subsequent Login
   @Login @SubsequentLogin
-  Scenario Outline:Verify user is able to login successfully when entering valid email and password as a Project Creator
+  Scenario Outline:TC_2: Verify user is able to login successfully when entering valid email and password as a Project Creator
     Given I want to open login page
     When I enter "<Email>" and "<Password>"
     And I click Login button
-    Then The manage project page should show "<url>"
+    Then The Corresponding page should show with URL "<url>"
     Examples:
-      |Email                          |Password    |url                                             |
+      |Email                           |Password    |url                                             |
       |hoainam.nv.1406+test16@gmail.com|Hoainam1406@|https://iresource.smartdev.vn/manage-projects   |
       |hoainam.nv.1406+test15@gmail.com|Hoainam1406@|https://iresource.smartdev.vn/explore-projects  |
 
-# Email and Pasword fields
+# Email and Password fields
   @Login
-  Scenario Outline:Verify user is unable to login when entering valid email and invalid password
+  Scenario Outline:TC_3: Verify user is unable to login when entering valid email and invalid password
     Given I want to open login page
     When I enter "<Email>" and "<Password>"
     And I click Login button
@@ -38,7 +37,7 @@ Feature: Login Test cases
       |hoainam.nv.1406+test16@gmail.com|Hoainam1406 |
 
   @Login
-  Scenario Outline:Verify user is unable to login when entering invalid email and valid password
+  Scenario Outline:TC_4: Verify user is unable to login when entering invalid email and valid password
     Given I want to open login page
     When I enter "<Email>" and "<Password>"
     And I click Login button
@@ -48,7 +47,7 @@ Feature: Login Test cases
       |hoainam.nv.1406+test61@gmail.com|Hoainam1406@ |
 
   @Login
-  Scenario Outline:Verify user is unable to login when entering invalid email and valid password
+  Scenario Outline:TC_5: Verify user is unable to login when entering invalid email and valid password
     Given I want to open login page
     When I enter "<Email>" and "<Password>"
     And I click Login button
@@ -58,7 +57,7 @@ Feature: Login Test cases
       |hoainam.nv.1406+test61@gmail.com|Hoainam1406 |
 
   @Login
-  Scenario Outline:Verify that the error message will show when entering invalid email or password
+  Scenario Outline:TC_6: Verify that the error message will show when entering invalid email or password
     Given I want to open login page
     When I enter "<Email>" and "<Password>"
     And I click Login button
@@ -69,25 +68,25 @@ Feature: Login Test cases
 
 # Remember me function
   @Login @RememberMe
-  Scenario Outline:Verify that the user's login data will be saved when logging-in successfully with remmember me button is checked
+  Scenario Outline:TC_7: Verify that the user's login data will be saved when logging-in successfully with remmember me button is checked
     Given I want to open login page
     When I enter "<Email>" and "<Password>"
     And I check the remember me checkbox
     And I click Login button
-    And The explore project page should show "<url>"
+    Then The Corresponding page should show with URL "<url>"
     And I click Log out button
     And I want to open login page
     Then The user data: "<Email>" and "<Password>" should be saved
     Examples:
-      |Email                          |Password     |url                                            |
+      |Email                           |Password     |url                                            |
       |hoainam.nv.1406+test15@gmail.com|Hoainam1406@ |https://iresource.smartdev.vn/explore-projects |
 
   @Login @RememberMe
-  Scenario Outline:Verify that the user's login data will be saved when logging-in successfully but remmember me button is unchecked
+  Scenario Outline:TC_8: Verify that the user's login data will be saved when logging-in successfully but remmember me button is unchecked
     Given I want to open login page
     When I enter "<Email>" and "<Password>"
     And I click Login button
-    And The explore project page should show "<url>"
+    Then The Corresponding page should show with URL "<url>"
     And I click Log out button
     And I want to open login page
     Then The user data: email and password should not be saved
@@ -95,8 +94,8 @@ Feature: Login Test cases
       |Email                          |Password     |url                                            |
       |hoainam.nv.1406+test15@gmail.com|Hoainam1406@ |https://iresource.smartdev.vn/explore-projects |
 
-  @Login @ShowPassword
-  Scenario Outline:Verify that the password data will show when clicking the show-password icon
+  @Login @ShowPassword @Test
+  Scenario Outline:TC_9: Verify that the password data will show when clicking the show-password icon
     Given I want to open login page
     When I enter "<Password>"
     And I click show-password icon
@@ -105,8 +104,8 @@ Feature: Login Test cases
       |Password     |
       |Hoainam1406@ |
 
-  @Login @ShowPassword
-  Scenario Outline:Verify that the password data will show when clicking the show-password icon
+  @Login @ShowPassword @Test
+  Scenario Outline:TC_10: Verify that the password data will show when clicking the show-password icon
     Given I want to open login page
     When I enter "<Password>"
     And I click show-password icon
@@ -117,7 +116,7 @@ Feature: Login Test cases
 
 # Forgot password
   @Login @ShowPassword
-  Scenario Outline:Verify that user is able to navigate to forgot password page when tapping the "Forgot password" button
+  Scenario Outline:TC_11: Verify that user is able to navigate to forgot password page when tapping the "Forgot password" button
     Given I want to open login page
     When I click the Forgot password button
     Then The Forgot password page should show "<url>"
@@ -126,7 +125,7 @@ Feature: Login Test cases
       |https://iresource.smartdev.vn/fogot-password-enter-email |
 
   @Login @ShowPassword
-  Scenario Outline:Verify that the error message will show when email address does not exist
+  Scenario Outline:TC_12: Verify that the error message will show when email address does not exist
     Given I want to open login page
     When I click the Forgot password button
     And The Forgot password page should show "<url>"
@@ -138,7 +137,7 @@ Feature: Login Test cases
       |https://iresource.smartdev.vn/fogot-password-enter-email  |hoainam.nv.1406@gmail.com     |
 
   @Login @ShowPassword
-  Scenario Outline:Verify that the error message will show when leaving the email field blank
+  Scenario Outline:TC_13: Verify that the error message will show when leaving the email field blank
     Given I want to open login page
     When I click the Forgot password button
     And The Forgot password page should show "<url>"
@@ -150,7 +149,7 @@ Feature: Login Test cases
       |https://iresource.smartdev.vn/fogot-password-enter-email  |     |Required!|
 
   @Login @ShowPassword
-  Scenario Outline:Verify that the error message will show when entering invalid email
+  Scenario Outline:TC_14: Verify that the error message will show when entering invalid email
     Given I want to open login page
     When I click the Forgot password button
     And The Forgot password page should show "<url>"
@@ -162,7 +161,7 @@ Feature: Login Test cases
       |https://iresource.smartdev.vn/fogot-password-enter-email  |namhoai   |Invalid email format|
 
   @Login @ShowPassword
-  Scenario Outline:Verify that the error message will show when entering invalid email
+  Scenario Outline:TC_15: Verify that the error message will show when entering invalid email
     Given I want to open login page
     When I click the Forgot password button
     And The Forgot password page should show "<url>"
@@ -175,7 +174,7 @@ Feature: Login Test cases
 
 #   Sign Up Here function
   @Login @SignUpHere
-  Scenario Outline:Verify that the Sign up page will show when clicking the Sign up Here button
+  Scenario Outline:TC_16: Verify that the Sign up page will show when clicking the Sign up Here button
     Given I want to open login page
     When I click the Sign Up Here button
     And The Sign Up Here page should show "<url>"

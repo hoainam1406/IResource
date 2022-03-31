@@ -3,6 +3,7 @@ package Pages.Common;
 import Locators.Common.Login_UI;
 import net.serenitybdd.core.pages.PageObject;
 import net.thucydides.core.annotations.DefaultUrl;
+import org.openqa.selenium.WebElement;
 
 @DefaultUrl("https://iresource.smartdev.vn/login")
 public class Login_Page extends PageObject {
@@ -43,5 +44,8 @@ public class Login_Page extends PageObject {
     public void enterPassword(String password){
         login_ui.tbxPassword.sendKeys(password);
     }
+
+
+
 
 }

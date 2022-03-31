@@ -3,7 +3,6 @@ package Steps.Common;
 import ExtensionPage.ExcelHelpers;
 import Locators.Common.SignUp_UI;
 import Pages.Common.SignUp_Page;
-import cucumber.api.PendingException;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -19,7 +18,7 @@ public class SignUp_Step extends PageObject {
     SignUp_Page signUp_page;
     public ExcelHelpers excel = new ExcelHelpers();
     public void setExcel() throws Exception {
-        excel.setExcelFile("src/test/resources/SignUpData.xlsx", "SignUpData");
+        excel.setExcelFile("src/test/resources/data/SignUpData.xlsx", "SignUpData");
     }
 
     @Given("^I want to open sign up page$")
@@ -62,5 +61,17 @@ public class SignUp_Step extends PageObject {
     @Then("^The verify email page should show$")
     public void theVerifyEmailPageShouldShow() {
         Assert.assertTrue(signUp_ui.txtVerifyEmail.isDisplayed());
+    }
+
+    @Given("^I launch Contacts application$")
+    public void iLaunchContactsApplication() {
+        signUp_page.openSignUpPage();
+    }
+
+    @Then("^I Add Contact with name \"([^\"]*)\" and number  \"([^\"]*)\"$")
+    public void iAddContactWithNameAndNumber(String contactName, String phoneNumber) throws Throwable {
+        signUp_ui.tbxFirstName.sendKeys(contactName);
+        signUp_ui.tbxLastName.sendKeys(phoneNumber);
+
     }
 }

@@ -6,4 +6,5 @@ import net.thucydides.core.annotations.DefaultUrl;
 @DefaultUrl("https://demoqa.com/alerts")
 public class Message_Page extends PageObject {
 
+
 }
