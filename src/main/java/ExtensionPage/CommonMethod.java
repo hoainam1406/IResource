@@ -65,5 +65,4 @@ public class CommonMethod extends PageObject {
         return elementFacade.getText();
     }
 
-
 }

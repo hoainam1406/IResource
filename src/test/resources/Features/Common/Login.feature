@@ -9,7 +9,7 @@ Feature: Initial Login Test cases
     And I click Login button
     Then The Corresponding page should show with URL "<url>"
     Examples:
-    |Email                          |Password    |url                                               |
+    |Email                           |Password    |url                                              |
     |hoainam.nv.1406+test17@gmail.com|Hoainam1406@|https://iresource.smartdev.vn/profile-creation   |
     |hoainam.nv.1406+test18@gmail.com|Hoainam1406@|https://iresource.smartdev.vn/general-information|
 
@@ -64,7 +64,7 @@ Feature: Initial Login Test cases
     Then The Error message should show under that fields "<Message1>" "<Message2>"
     Examples:
       |Email                          |Password    |Message1                    |Message2            |
-      |hoainam@com                    |      dd  |Invalid email format        |Minimum 5 characters|
+      |hoainam@com                    |      dd    |Invalid email format        |Minimum 5 characters|
 
 # Remember me function
   @Login @RememberMe

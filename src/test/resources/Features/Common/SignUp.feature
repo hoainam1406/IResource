@@ -54,7 +54,6 @@ Feature: Sign Up Test cases
       |          |Hoai     |hoainam@namhoai|Hoainam1406@|Hoainam1406@   |Required! |
 
 #   Email field
-
   @SignUp
   Scenario Outline:Verify user the error message will show when leaving the Email field blank
     Given I want to open sign up page
@@ -76,7 +75,6 @@ Feature: Sign Up Test cases
       |    ABC   |   DEF   |hoainam@namhoai|Hoainam1406@|Hoainam1406@   |Invalid email format|
 
 #   Password field
-
   @SignUp
   Scenario Outline:Verify user the error message will show when leaving the password field blank
     Given I want to open sign up page
@@ -110,7 +108,7 @@ Feature: Sign Up Test cases
       |FirstName |LastName |Email            |Password    |ConfirmPassword      |Message                                  |
       |    ABC   |   DEF   |hoainam@gmail.com|Hoa 1406@   |Hoainam1406@         |This field cannot contain blankspaces    |
 
-#   Confirmpassword field
+#   Confirm password field
   @SignUp
   Scenario Outline:Verify user the error message will show when leaving the Confirmpassword field blank
     Given I want to open sign up page
@@ -131,9 +129,3 @@ Feature: Sign Up Test cases
       |FirstName |LastName |Email            |Password    |ConfirmPassword      |Message                |
       |    ABC   |   DEF   |hoainam@gmail.com|Hoainam1406@|Hoainam1406          |Password doesn’t match |
 
-
-#  @Test
-#  Scenario Outline:Verify user the error message will show when entering Confirmpassword not match with password
-#    Given I want to open sign up page
-#    Then I Add Contact with name "<contactName>" and number  "<phoneNumber>"
-#    Examples:

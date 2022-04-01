@@ -1,5 +1,6 @@
 package Steps.Common;
 
+import ExtensionPage.CommonMethod;
 import ExtensionPage.ExcelHelpers;
 import Locators.Common.SignUp_UI;
 import Pages.Common.SignUp_Page;
@@ -8,12 +9,12 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.core.pages.PageObject;
-import org.junit.Assert;
 
 import java.util.concurrent.TimeUnit;
 
 public class SignUp_Step extends PageObject {
 
+    CommonMethod method;
     SignUp_UI signUp_ui;
     SignUp_Page signUp_page;
     public ExcelHelpers excel = new ExcelHelpers();
@@ -33,13 +34,13 @@ public class SignUp_Step extends PageObject {
 
     @And("^I click Sign Up button$")
     public void iClickSignUpButton() {
-        signUp_page.clickSignUpbutton();
+        method.click(signUp_ui.btnSignUpButton);
         getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     }
 
     @Then("^The error message should be shown$")
     public void theErrorMessageShouldBeShown() {
-        Assert.assertTrue(signUp_ui.errFirebase.isDisplayed());
+        method.compareTrue(method.checkIsDisplay(signUp_ui.errFirebase));
     }
 
     @When("^I want to enter all fields$")
@@ -55,23 +56,12 @@ public class SignUp_Step extends PageObject {
 
     @Then("^The error messages should show \"([^\"]*)\"$")
     public void theErrorMessagesShouldShow(String message) throws Throwable {
-        Assert.assertEquals(message,signUp_ui.errors.get(0).getText());
+        method.compareEqual(message,method.getText(signUp_ui.errors.get(0)));
     }
 
     @Then("^The verify email page should show$")
     public void theVerifyEmailPageShouldShow() {
-        Assert.assertTrue(signUp_ui.txtVerifyEmail.isDisplayed());
+        method.compareTrue(method.checkIsDisplay(signUp_ui.txtVerifyEmail));
     }
 
-    @Given("^I launch Contacts application$")
-    public void iLaunchContactsApplication() {
-        signUp_page.openSignUpPage();
-    }
-
-    @Then("^I Add Contact with name \"([^\"]*)\" and number  \"([^\"]*)\"$")
-    public void iAddContactWithNameAndNumber(String contactName, String phoneNumber) throws Throwable {
-        signUp_ui.tbxFirstName.sendKeys(contactName);
-        signUp_ui.tbxLastName.sendKeys(phoneNumber);
-
-    }
 }

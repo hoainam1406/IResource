@@ -10,6 +10,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.core.pages.PageObject;
+import org.openqa.selenium.Keys;
 
 public class Login_Step extends PageObject {
     Login_UI login_ui;
@@ -26,7 +27,8 @@ public class Login_Step extends PageObject {
 
     @And("^I click Login button$")
     public void iClickLoginButton() {
-        method.click(login_ui.btnLogin);
+//        method.click(login_ui.btnLogin);
+        login_ui.btnLogin.sendKeys(Keys.ENTER);
     }
 
     @Then("^The Corresponding page should show with URL \"([^\"]*)\"$")
