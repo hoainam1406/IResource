@@ -1,8 +1,7 @@
 package ExtensionPage;
 
-import net.serenitybdd.core.pages.WebElementFacade;
-import org.junit.Assert;
 import net.serenitybdd.core.pages.PageObject;
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 
 public class CommonMethod extends PageObject {
@@ -35,7 +34,7 @@ public class CommonMethod extends PageObject {
         element.isEnabled();
     }
 
-    public String getAtrribute(WebElementFacade element, String value){
+    public String getAttribute( WebElement element, String value){
       return element.getAttribute(value);
     }
 
@@ -61,8 +60,8 @@ public class CommonMethod extends PageObject {
         return true;
     }
 
-    public String getTextValue(WebElementFacade elementFacade){
-        return elementFacade.getText();
+    public String getTextValue(WebElement element){
+        return element.getText();
     }
 
 }

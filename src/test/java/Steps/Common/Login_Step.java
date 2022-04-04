@@ -10,6 +10,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import net.serenitybdd.core.pages.PageObject;
+import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
 public class Login_Step extends PageObject {
@@ -33,7 +34,8 @@ public class Login_Step extends PageObject {
 
     @Then("^The Corresponding page should show with URL \"([^\"]*)\"$")
     public void theCorrespondingPageShouldShowWithURL(String url) throws Throwable {
-        method.compareEqual(url, method.getUrl());
+//        method.compareEqual(url, method.getUrl());
+        Assert.assertEquals(url,method.getUrl());
     }
 
     @Then("^The Profile information should show \"([^\"]*)\"$")
@@ -64,14 +66,15 @@ public class Login_Step extends PageObject {
 
     @Then("^The user data: \"([^\"]*)\" and \"([^\"]*)\" should be saved$")
     public void theUserDataAndShouldBeSaved(String email, String password) throws Throwable {
-        method.compareEqual(email, method.getAtrribute(login_ui.tbxEmail,"value"));
-        method.compareEqual(password, method.getAtrribute(login_ui.tbxPassword,"value"));
+        method.compareEqual(email, method.getAttribute(login_ui.tbxEmail,"value"));
+        method.compareEqual(password, method.getAttribute(login_ui.tbxPassword,"value"));
     }
 
     @Then("^The user data: email and password should not be saved$")
     public void theUserDataEmailAndPasswordShouldNotBeSaved() {
-        method.compareEqual("", method.getAtrribute(login_ui.tbxEmail,"value"));
-        method.compareEqual("", method.getAtrribute(login_ui.tbxPassword,"value"));
+        method.compareEqual("", method.getAttribute(login_ui.tbxEmail,"value"));
+        method.compareEqual("", method.getAttribute(login_ui.tbxPassword,"value"));
+//        Assert.assertEquals("",login_ui.tbxEmail.getAttribute("value"));
     }
 
     @When("^I enter \"([^\"]*)\"$")
@@ -86,7 +89,7 @@ public class Login_Step extends PageObject {
 
     @Then("^The password data should show \"([^\"]*)\"$")
     public void thePasswordDataShouldShow(String password) throws Throwable {
-        method.compareEqual(password, method.getAtrribute(login_ui.tbxPassword,"value"));
+        method.compareEqual(password, method.getAttribute(login_ui.tbxPassword,"value"));
     }
 
     @When("^I click the Forgot password button$")

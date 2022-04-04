@@ -1,4 +1,4 @@
-Feature: Initial Login Test cases
+Feature: Login Test cases
   I want to login into IResource website
 
 #  Initial Login
@@ -67,7 +67,7 @@ Feature: Initial Login Test cases
       |hoainam@com                    |      dd    |Invalid email format        |Minimum 5 characters|
 
 # Remember me function
-  @Login @RememberMe
+  @Login @RememberMe @TC7
   Scenario Outline:TC_7: Verify that the user's login data will be saved when logging-in successfully with remmember me button is checked
     Given I want to open login page
     When I enter "<Email>" and "<Password>"
