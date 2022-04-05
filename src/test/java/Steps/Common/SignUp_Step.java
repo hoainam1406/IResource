@@ -47,11 +47,11 @@ public class SignUp_Step extends PageObject {
     public void iWantToEnterAllFields() throws Exception {
         setExcel();
         signUp_page.enterAllFields(
-                excel.getCellData(3, 0),
-                excel.getCellData(3, 1),
-                excel.getCellData(3, 2),
-                excel.getCellData(3, 3),
-                excel.getCellData(3, 4));
+                excel.getCellData(1, 0),
+                excel.getCellData(1, 1),
+                excel.getCellData(1, 2),
+                excel.getCellData(1, 3),
+                excel.getCellData(1, 4));
     }
 
     @Then("^The error messages should show \"([^\"]*)\"$")

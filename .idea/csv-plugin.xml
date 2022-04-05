@@ -10,6 +10,20 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\target\site\serenity\fb27a1557b98806401170c023cc53c2440700a867d8d29730277379ffa85f308.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\target\site\serenity\results.csv">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
       </map>
     </option>
   </component>

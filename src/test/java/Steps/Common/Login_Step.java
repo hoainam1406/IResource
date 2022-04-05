@@ -13,6 +13,8 @@ import net.serenitybdd.core.pages.PageObject;
 import org.junit.Assert;
 import org.openqa.selenium.Keys;
 
+import java.util.concurrent.TimeUnit;
+
 public class Login_Step extends PageObject {
     Login_UI login_ui;
     Login_Page login_Page;
@@ -28,8 +30,8 @@ public class Login_Step extends PageObject {
 
     @And("^I click Login button$")
     public void iClickLoginButton() {
-//        method.click(login_ui.btnLogin);
-        login_ui.btnLogin.sendKeys(Keys.ENTER);
+        method.click(login_ui.btnLogin);
+//        login_ui.btnLogin.sendKeys(Keys.ENTER);
     }
 
     @Then("^The Corresponding page should show with URL \"([^\"]*)\"$")
@@ -150,4 +152,8 @@ public class Login_Step extends PageObject {
     }
 
 
+    @And("^Wait till the page is shown$")
+    public void waitTillThePageIsShown() {
+        getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+    }
 }
