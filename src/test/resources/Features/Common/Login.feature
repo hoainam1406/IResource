@@ -34,7 +34,7 @@ Feature: Login Test cases
     And I click Login button
     Then The Error message should show
     Examples:
-      |Email                          |Password    |
+      |Email                           |Password    |
       |hoainam.nv.1406+test16@gmail.com|Hoainam1406 |
 
   @Login
