@@ -47,8 +47,8 @@ Feature: Login Test cases
       |Email                           |Password     |
       |hoainam.nv.1406+test61@gmail.com|Hoainam1406@ |
 
-  @Login
-  Scenario Outline:TC_5- Verify user is unable to login when entering invalid email and valid password
+  @Login @Dev @Loginfun @Passwordfield
+  Scenario Outline:IR-123 Verify user is unable to login when entering invalid email and valid password
     Given I want to open login page
     When I enter "<Email>" and "<Password>"
     And I click Login button
