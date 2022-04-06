@@ -1,6 +1,6 @@
 package ExtensionPage;
 
-import net.serenitybdd.core.pages.PageObject;
+import net.thucydides.core.pages.PageObject;
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 

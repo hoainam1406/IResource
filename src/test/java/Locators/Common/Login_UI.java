@@ -31,7 +31,7 @@ public class Login_UI extends PageObject {
     public WebElementFacade btnSignUpHere;
 
     @FindBy(className = "errors")
-    public WebElementFacade errEmailMessage;
+    public List<WebElementFacade> errMessage;
 
     @FindBy(xpath = "//p[contains(text(),'Minimum 5 characters')]")
     public WebElementFacade errPasswordMessage;
@@ -39,6 +39,8 @@ public class Login_UI extends PageObject {
     @FindBy(xpath = "//div[contains(text(),'Email or password is invalid.')]")
     public WebElementFacade msgError;
 
-    @FindBy(xpath = "//p[contains(text(),'Hello and welcome !')]")
-    public WebElementFacade test;
+    @FindBy(className = "add-new-text")
+    public WebElementFacade btnAddNewProject;
+
+
 }
