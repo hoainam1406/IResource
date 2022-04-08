@@ -6,8 +6,8 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = {"src/test/resources/Features/Common"},
-        tags = {""},
+        features = {"src/test/resources/Features"},
+        tags = {"@1.1"},
         glue = {"Steps"},
         plugin = {"pretty", "html:target/cucumber-reports"},
         monochrome = true

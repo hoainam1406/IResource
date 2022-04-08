@@ -63,5 +63,4 @@ public class SignUp_Step extends PageObject {
     public void theVerifyEmailPageShouldShow() {
         method.compareTrue(method.checkIsDisplay(signUp_ui.txtVerifyEmail));
     }
-
 }
