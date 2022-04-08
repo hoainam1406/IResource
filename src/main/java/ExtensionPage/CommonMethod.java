@@ -2,7 +2,10 @@ package ExtensionPage;
 
 import net.serenitybdd.core.pages.PageObject;
 import org.junit.Assert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
+
+import java.io.File;
 
 public class CommonMethod extends PageObject {
 
@@ -22,8 +25,8 @@ public class CommonMethod extends PageObject {
         element.clear();
     }
 
-    public void checkSelected(WebElement element){
-        element.isSelected();
+    public boolean checkSelected(WebElement element){
+        return element.isSelected();
     }
 
     public boolean checkIsDisplay(WebElement element) {
@@ -38,6 +41,7 @@ public class CommonMethod extends PageObject {
       return element.getAttribute(value);
     }
 
+    //note
     public void RefreshPage() {
         getDriver().navigate().refresh();
     }
@@ -64,4 +68,12 @@ public class CommonMethod extends PageObject {
         return element.getText();
     }
 
+    public String getFile(){
+        return new File("files/photo-1541963463532-d68292c34b19.jpeg").getAbsolutePath();
+    }
+
+    public void scrollUp(){
+        ((JavascriptExecutor)
+                getDriver()).executeScript("window.scrollTo(0, document.body.scrollTop);");
+    }
 }

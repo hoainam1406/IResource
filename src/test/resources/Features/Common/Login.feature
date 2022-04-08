@@ -2,7 +2,7 @@ Feature: Login Test cases
   I want to login into IResource website
 
 #  Initial Login
-  @Login @InitialLogin @Test @1
+  @Login @InitialLogin @Test @LOG_1
   Scenario Outline:TC_1- Verify user is able to login successfully when entering valid email and password
     Given I want to open login page
     When I enter "<Email>" and "<Password>"
