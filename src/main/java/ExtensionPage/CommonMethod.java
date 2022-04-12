@@ -72,8 +72,13 @@ public class CommonMethod extends PageObject {
         return new File("files/photo-1541963463532-d68292c34b19.jpeg").getAbsolutePath();
     }
 
+    public void scrollDown(WebElement element){
+        ((JavascriptExecutor) getDriver()).executeScript(
+                "arguments[0].scrollIntoView();", element);
+    }
     public void scrollUp(){
         ((JavascriptExecutor)
                 getDriver()).executeScript("window.scrollTo(0, document.body.scrollTop);");
     }
+
 }

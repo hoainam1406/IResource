@@ -8,4 +8,7 @@ public class ManageProject_UI extends PageObject {
 
     @FindBy(className ="add-new")
     public WebElementFacade btnAddNew;
+
+    @FindBy (className = ".sidebar-list-item.active")
+    public WebElementFacade itemManageProjects;
 }
