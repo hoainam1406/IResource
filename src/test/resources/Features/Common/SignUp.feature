@@ -10,25 +10,25 @@ Feature: Sign Up Test cases
     Then The error message should be shown
 
 #   Using Scenario Outline
-  @SignUp
-  Scenario Outline:Verify user is able to sign up successfully when entering all valid fields
-    Given I want to open sign up page
-    When I want to enter all fields "<FirstName>" "<LastName>" "<Email>" "<Password>" "<ConfirmPassword>"
-    And I click Sign Up button
-    Then The verify email page should show
-    Examples:
-      |FirstName|LastName|Email                           |Password     |ConfirmPassword|
-      | Nam     | Hoai   |test9@gmsail.com                |Hoainam1406@ |Hoainam1406@   |
+#  @SignUp @1
+#  Scenario Outline:Verify user is able to sign up successfully when entering all valid fields
+#    Given I want to open sign up page
+#    When I want to enter all fields "<FirstName>" "<LastName>" "<Email>" "<Password>" "<ConfirmPassword>"
+#    And I click Sign Up button
+#    Then The verify email page should show
+#    Examples:
+#      |FirstName|LastName|Email                           |Password     |ConfirmPassword|
+#      | Nam     | Hoai   |test9@gmsail.com                |Hoainam1406@ |Hoainam1406@   |
 
-  @SignUp
-  Scenario Outline:Verify user is able to sign up successfully when entering all valid fields
-    Given I want to open sign up page
-    When I want to enter all fields "<FirstName>" "<LastName>" "<Email>" "<Password>" "<ConfirmPassword>"
-    And I click Sign Up button
-    Then The error message should be shown
-    Examples:
-      |FirstName|LastName|Email                           |Password    |ConfirmPassword|
-      | Nam     | Hoai   |hoainam.nv.1406+test19@gmail.com|Hoainam1406@|Hoainam1406@   |
+#  @SignUp
+#  Scenario Outline:Verify user is able to sign up successfully when entering all valid fields
+#    Given I want to open sign up page
+#    When I want to enter all fields "<FirstName>" "<LastName>" "<Email>" "<Password>" "<ConfirmPassword>"
+#    And I click Sign Up button
+#    Then The error message should be shown
+#    Examples:
+#      |FirstName|LastName|Email                           |Password    |ConfirmPassword|
+#      | Nam     | Hoai   |hoainam.nv.1406+test19@gmail.com|Hoainam1406@|Hoainam1406@   |
 
 #  Name fields
   @SignUp

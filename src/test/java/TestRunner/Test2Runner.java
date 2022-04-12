@@ -6,11 +6,11 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = {"src/test/resources/Features/Common/SignUp.feature"},
-        tags = {"@2"},
+        features = {"src/test/resources/Features/Internal Persona/Login.feature"},
+        tags = {"@0"},
         glue = {"Steps"},
         plugin = {"pretty", "html:target/cucumber-reports"},
         monochrome = true
 )
-public class TestRunner {
+public class Test2Runner {
 }
