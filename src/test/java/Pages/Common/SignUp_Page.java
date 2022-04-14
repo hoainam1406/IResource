@@ -24,4 +24,21 @@ public class SignUp_Page extends PageObject {
         method.enterData(signUp_ui.tbxPassword,password);
         method.enterData(signUp_ui.tbxConfirmPassword,confirmpassword);
     }
+
+    public void enterNameFields(String firstname, String lastname){
+        method.enterData(signUp_ui.tbxFirstName,firstname);
+        method.enterData(signUp_ui.tbxLastName,lastname);
+    }
+
+    public void enterEmailField(String email){
+        method.enterData(signUp_ui.tbxEmail,email);
+    }
+
+    public void enterPasswordField(String password){
+        method.enterData(signUp_ui.tbxPassword,password);
+    }
+
+    public void enterConfirmPasswordField(String confirmpassword){
+        method.enterData(signUp_ui.tbxPassword,confirmpassword);
+    }
 }

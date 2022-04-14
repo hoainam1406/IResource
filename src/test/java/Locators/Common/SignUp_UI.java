@@ -47,6 +47,16 @@ public class SignUp_UI extends PageObject {
     @FindBy(className = "input-group-text")
     public WebElementFacade btnShowConfirmPassword;
 
-    @FindBy(className = "signup-title")
-    public WebElementFacade txtVerifyEmail;
+    @FindBy(xpath = "//body/div[@id='root']/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[1]/div[3]/p[1]")
+    public WebElementFacade errMessageEmail;
+
+    @FindBy(xpath = "//body/div[@id='root']/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[1]/div[4]/p[1]")
+    public WebElementFacade errMessagePassword;
+
+    @FindBy(xpath = "//body/div[@id='root']/div[1]/div[1]/div[1]/div[2]/div[2]/form[1]/div[1]/div[5]/p[1]")
+    public WebElementFacade errMessageConfirmPassword;
+
+    @FindBy(xpath = "///p[contains(text(),'Invalid email format')]")
+    public WebElementFacade errInvalidEmail;
+
 }

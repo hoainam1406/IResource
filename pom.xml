@@ -187,7 +187,8 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.20</version>
                 <configuration>
-<!--                    <threadCount>2</threadCount>-->
+                    <testFailureIgnore>true</testFailureIgnore>
+                    <!--                    <threadCount>2</threadCount>-->
 <!--                    <perCoreThreadCount>false</perCoreThreadCount>-->
 <!--                    <parallel>classes</parallel>-->
 <!--                    <includes>**/*Runner.java</includes>-->
