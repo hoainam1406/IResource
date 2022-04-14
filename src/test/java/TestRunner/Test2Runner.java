@@ -6,7 +6,7 @@ import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
 @CucumberOptions(
-        features = {"src/test/resources/Features/Internal Persona/Login.feature"},
+        features = {"src/test/resources/Features/Common/SignUp.feature"},
         tags = {"@0"},
         glue = {"Steps"},
         plugin = {"pretty", "html:target/cucumber-reports"},
