@@ -15,8 +15,8 @@ public class ProfileCreation_Page extends PageObject {
 
     public void openProfileCreationPage(){
         login_page.openLoginPage();
-        method.enterData(login_ui.tbxEmail,"ngan.kim@mailsac.com");
-        method.enterData(login_ui.tbxPassword,"Ngan@1234");
+        method.enterData(login_ui.tbxEmail,"olwen.nguyen@mailsac.com");
+        method.enterData(login_ui.tbxPassword,"Olwen@1234");
         method.click(login_ui.btnLogin);
     }
 }
